@@ -16,7 +16,7 @@ import java.util.Optional;
  * on 07/08/2018.
  */
 @RestController
-@RequestMapping("/api/v1/environments")
+@RequestMapping("/environments")
 public class OnDemandVMStateController {
 
     private final VMStateRepository vmStateRepository;
