@@ -21,9 +21,11 @@ import java.util.stream.Collectors;
 public class QAVmService {
 
     private final File credFile = new File(System.getenv("AZURE_AUTH_LOCATION"));
+
     private final Azure azure = Azure.configure()
             .authenticate(credFile)
             .withDefaultSubscription();
+
     @Value("${AZURE_RESOURCE_GROUP}")
     private String azureResourceGroup;
 
@@ -44,6 +46,8 @@ public class QAVmService {
         VirtualMachineDto v = new VirtualMachineDto();
         v.setId(vm.tags().get("id"));
         v.setId(vm.getPrimaryPublicIPAddress().ipAddress());
+        v.setLogin(vm.osProfile().adminUsername());
+        v.setPassword(vm.osProfile().adminPassword());
         return v;
     }
 
