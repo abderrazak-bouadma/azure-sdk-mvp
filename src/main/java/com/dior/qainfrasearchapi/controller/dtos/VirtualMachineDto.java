@@ -11,6 +11,5 @@ public class VirtualMachineDto {
 
     private String id;
     private String publicIp;
-    private String login;
-    private String password;
+
 }

@@ -46,8 +46,6 @@ public class QAVmService {
         VirtualMachineDto v = new VirtualMachineDto();
         v.setId(vm.tags().get("id"));
         v.setPublicIp(vm.getPrimaryPublicIPAddress().ipAddress());
-        v.setLogin(vm.osProfile().adminUsername());
-        v.setPassword(vm.osProfile().adminPassword());
         return v;
     }
 
