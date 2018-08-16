@@ -26,3 +26,6 @@ hs_err_pid*
 
 # azure creds
 .azure.properties
+build.sh
+run.sh
+publish.sh
